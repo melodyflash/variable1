@@ -1,5 +1,4 @@
 import ServiceCard from '../components/ServiceCard.jsx';
-import AnimatedIcon from '../components/AnimatedIcon.jsx';
 
 const services = [
   {
@@ -15,7 +14,7 @@ const services = [
   {
     title: 'Responsive Signage, Lights & Queue Entertainment',
     stat: 'Repeat visits up 30% with interactive media — Forrester',
-    icon: 'signage',
+    icon: 'lighting',
     points: [
       'Projection-mapped murals and LED sculptures that shift with crowd energy',
       'Dynamic wait-time storytelling that reduces perceived queue length by 25%',
@@ -31,27 +30,6 @@ const services = [
       'Real-time SMS and Slack alerts for anomalies, inventory dips, or VIP arrivals',
       'Executive analytics tying experiential KPIs to sales, staffing, and sustainability goals',
     ],
-  },
-];
-
-const serviceHighlights = [
-  {
-    title: 'Staff support',
-    description:
-      'Verizon\'s 2023 survey shows 76% of frontline teams feel less overwhelmed when IoT tools automate routine updates.',
-    icon: 'automation',
-  },
-  {
-    title: 'Customer curiosity',
-    description:
-      'Experiential commerce studies reveal interactive landmarks boost average order value by 18% while shortening decision time.',
-    icon: 'immersive',
-  },
-  {
-    title: 'Data clarity',
-    description:
-      'IBM notes companies blending IoT analytics with BI platforms make faster decisions 3x more often than competitors.',
-    icon: 'insight',
   },
 ];
 
@@ -74,16 +52,18 @@ const Services = () => {
       <section className="service-highlight">
         <h2>Why move now?</h2>
         <ul>
-          {serviceHighlights.map((item) => (
-            <li key={item.title}>
-              <span className="card-icon">
-                <AnimatedIcon name={item.icon} />
-              </span>
-              <div>
-                <strong>{item.title}:</strong> {item.description}
-              </div>
-            </li>
-          ))}
+          <li>
+            <strong>Staff support:</strong> Verizon&apos;s 2023 survey shows 76% of frontline teams feel less overwhelmed when IoT tools
+            automate routine updates.
+          </li>
+          <li>
+            <strong>Customer curiosity:</strong> Experiential commerce studies reveal interactive landmarks boost average order value
+            by 18% while shortening decision time.
+          </li>
+          <li>
+            <strong>Data clarity:</strong> IBM notes companies blending IoT analytics with BI platforms make faster decisions 3x more
+            often than competitors.
+          </li>
         </ul>
       </section>
     </div>

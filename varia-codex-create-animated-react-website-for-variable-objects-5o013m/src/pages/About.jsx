@@ -1,21 +1,21 @@
 import AnimatedIcon from '../components/AnimatedIcon.jsx';
 
-const aboutPillars = [
+const pillars = [
   {
     title: 'Ethics in every interaction',
-    description:
+    copy:
       'We champion privacy-first data practices, transparent consent, and responsible AI. Our team maps every touchpoint to ensure insights elevate staff and guests without compromising humanity.',
     icon: 'ethics',
   },
   {
     title: 'Art + Tech = Delight',
-    description:
+    copy:
       'Sculptors, lighting designers, and creative coders collaborate with system engineers to deliver responsive art that doubles as business infrastructure. Expect installations that look gallery-ready while quietly managing your ops.',
-    icon: 'creativity',
+    icon: 'delight',
   },
   {
     title: 'Community-minded partnerships',
-    description:
+    copy:
       'We reinvest in local makers across the West Coast, prioritizing inclusive hiring and education programs that help communities thrive alongside the technology.',
     icon: 'community',
   },
@@ -34,13 +34,13 @@ const About = () => {
         </p>
       </section>
       <section className="about-grid">
-        {aboutPillars.map((pillar) => (
+        {pillars.map((pillar) => (
           <article key={pillar.title}>
-            <span className="card-icon">
+            <span className="about-icon" aria-hidden="true">
               <AnimatedIcon name={pillar.icon} />
             </span>
             <h2>{pillar.title}</h2>
-            <p>{pillar.description}</p>
+            <p>{pillar.copy}</p>
           </article>
         ))}
       </section>

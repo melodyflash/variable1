@@ -5,7 +5,7 @@ const ServiceCard = ({ title, points, stat, icon }) => {
   return (
     <article className="service-card">
       <div className="service-header">
-        <span className="card-icon service-icon">
+        <span className="service-icon" aria-hidden="true">
           <AnimatedIcon name={icon} />
         </span>
         <h3>{title}</h3>
@@ -18,12 +18,7 @@ const ServiceCard = ({ title, points, stat, icon }) => {
           </li>
         ))}
       </ul>
-      {stat && (
-        <p className="service-stat">
-          <AnimatedIcon name="insight" />
-          <span>{stat}</span>
-        </p>
-      )}
+      {stat && <span className="service-stat">{stat}</span>}
     </article>
   );
 };
