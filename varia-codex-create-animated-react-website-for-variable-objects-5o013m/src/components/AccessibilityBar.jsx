@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { BiAccessibility } from 'react-icons/bi';
 import AnimatedIcon from './AnimatedIcon.jsx';
+import './AccessibilityBar.css';
 
 const AccessibilityBar = ({ accessibility, setAccessibility, inline = false }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const toggleOption = (key) => {
     setAccessibility((prev) => ({
       ...prev,
@@ -9,36 +14,53 @@ const AccessibilityBar = ({ accessibility, setAccessibility, inline = false }) =
     }));
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div
       className={`accessibility-bar ${inline ? 'accessibility-bar--inline' : ''}`}
       aria-label="Accessibility preferences"
-      role="group"
     >
       <button
         type="button"
-        className={`accessibility-btn ${accessibility.largeText ? 'active' : ''}`}
-        onClick={() => toggleOption('largeText')}
+        className="accessibility-menu-trigger"
+        onClick={toggleMenu}
+        aria-expanded={isMenuOpen}
+        aria-label="Toggle accessibility menu"
       >
-        <AnimatedIcon name="text" />
-        <span>Large Text</span>
+        <BiAccessibility aria-hidden="true" />
       </button>
-      <button
-        type="button"
-        className={`accessibility-btn ${accessibility.highContrast ? 'active' : ''}`}
-        onClick={() => toggleOption('highContrast')}
-      >
-        <AnimatedIcon name="contrast" />
-        <span>High Contrast</span>
-      </button>
-      <button
-        type="button"
-        className={`accessibility-btn ${accessibility.reduceMotion ? 'active' : ''}`}
-        onClick={() => toggleOption('reduceMotion')}
-      >
-        <AnimatedIcon name="motion" />
-        <span>Reduce Motion</span>
-      </button>
+      
+      {isMenuOpen && (
+        <div className="accessibility-menu-dropdown" role="menu">
+          <button
+            type="button"
+            className={`accessibility-btn ${accessibility.largeText ? 'active' : ''}`}
+            onClick={() => toggleOption('largeText')}
+          >
+            <AnimatedIcon name="text" />
+            <span>Large Text</span>
+          </button>
+          <button
+            type="button"
+            className={`accessibility-btn ${accessibility.highContrast ? 'active' : ''}`}
+            onClick={() => toggleOption('highContrast')}
+          >
+            <AnimatedIcon name="contrast" />
+            <span>High Contrast</span>
+          </button>
+          <button
+            type="button"
+            className={`accessibility-btn ${accessibility.reduceMotion ? 'active' : ''}`}
+            onClick={() => toggleOption('reduceMotion')}
+          >
+            <AnimatedIcon name="motion" />
+            <span>Reduce Motion</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

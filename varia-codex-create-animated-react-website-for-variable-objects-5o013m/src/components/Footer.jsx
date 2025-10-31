@@ -12,7 +12,7 @@ const Footer = () => {
       </div>
       <div className="footer-contact">
         <p><strong>Ocean Beach HQ</strong></p>
-        <p>4841 Newport Ave, Ocean Beach, CA 92107</p>
+        <p>San Diego, CA 92107</p>
         <p>📞 <a href="tel:16196636363">(619) 663-6363</a></p>
         <p>✉️ <a href="mailto:awesome3dpf@proton.me">awesome3dpf@proton.me</a></p>
       </div>

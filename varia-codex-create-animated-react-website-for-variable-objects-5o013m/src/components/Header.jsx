@@ -1,41 +1,13 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AnimatedIcon from './AnimatedIcon.jsx';
 import AccessibilityBar from './AccessibilityBar.jsx';
-
-const navItems = [
-  { to: '/', label: 'Home' },
-  { to: '/services', label: 'Services' },
-  { to: '/case-studies', label: 'Case Studies' },
-  { to: '/about', label: 'About' },
-];
+import Navigation from './Navigation.jsx';
 
 const Header = ({ theme, setTheme, accessibility, setAccessibility }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleNavigate = (event) => {
-    const { value } = event.target;
-    if (value && value !== location.pathname) {
-      navigate(value);
-    }
-  };
-
   return (
     <header className="site-header">
-      <div className="nav-switcher">
-        <label htmlFor="page-select" className="sr-only">
-          Navigate to page
-        </label>
-        <select id="page-select" value={location.pathname} onChange={handleNavigate}>
-          {navItems.map((item) => (
-            <option key={item.to} value={item.to}>
-              {item.label}
-            </option>
-          ))}
-        </select>
-        <AnimatedIcon name="compass" />
-      </div>
+      <Navigation />
       <Link to="/" className="logo" aria-label="Variable Objects home">
         <AnimatedIcon name="logo" />
         <span className="logo-text">
