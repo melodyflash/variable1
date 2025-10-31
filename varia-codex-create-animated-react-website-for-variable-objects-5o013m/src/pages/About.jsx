@@ -3,19 +3,19 @@ import AnimatedIcon from '../components/AnimatedIcon.jsx';
 const pillars = [
   {
     title: 'Ethics in every interaction',
-    description:
+    copy:
       'We champion privacy-first data practices, transparent consent, and responsible AI. Our team maps every touchpoint to ensure insights elevate staff and guests without compromising humanity.',
     icon: 'ethics',
   },
   {
     title: 'Art + Tech = Delight',
-    description:
+    copy:
       'Sculptors, lighting designers, and creative coders collaborate with system engineers to deliver responsive art that doubles as business infrastructure. Expect installations that look gallery-ready while quietly managing your ops.',
-    icon: 'artistry',
+    icon: 'delight',
   },
   {
     title: 'Community-minded partnerships',
-    description:
+    copy:
       'We reinvest in local makers across the West Coast, prioritizing inclusive hiring and education programs that help communities thrive alongside the technology.',
     icon: 'community',
   },
@@ -24,7 +24,7 @@ const pillars = [
 const About = () => {
   return (
     <div className="page about-page">
-      <section className="section-heading narrow animate-on-scroll">
+      <section className="section-heading narrow">
         <p className="eyebrow">Community-built, future-ready</p>
         <h1>Rooted in Ocean Beach, crafting ethical connections everywhere</h1>
         <p>
@@ -35,18 +35,16 @@ const About = () => {
       </section>
       <section className="about-grid">
         {pillars.map((pillar) => (
-          <article key={pillar.title} className="animate-on-scroll">
-            <div className="card-header">
-              <span className="card-icon" aria-hidden="true">
-                <AnimatedIcon name={pillar.icon} />
-              </span>
-              <h2>{pillar.title}</h2>
-            </div>
-            <p>{pillar.description}</p>
+          <article key={pillar.title}>
+            <span className="about-icon" aria-hidden="true">
+              <AnimatedIcon name={pillar.icon} />
+            </span>
+            <h2>{pillar.title}</h2>
+            <p>{pillar.copy}</p>
           </article>
         ))}
       </section>
-      <section className="callout animate-on-scroll">
+      <section className="callout">
         <h2>Let&apos;s create brighter, kinder experiences</h2>
         <p>
           From San Diego surf shops to Seattle innovation labs, we build connected ecosystems that celebrate place, culture, and

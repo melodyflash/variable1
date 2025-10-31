@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AnimatedIcon from './AnimatedIcon.jsx';
@@ -14,80 +13,28 @@ const navItems = [
 const Header = ({ theme, setTheme, accessibility, setAccessibility }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
 
-  const currentPage = navItems.find((item) => item.to === location.pathname) || navItems[0];
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
-
-  useEffect(() => {
-    if (!menuOpen) {
-      return undefined;
+  const handleNavigate = (event) => {
+    const { value } = event.target;
+    if (value && value !== location.pathname) {
+      navigate(value);
     }
-
-    const handleClick = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
-
-    const handleKey = (event) => {
-      if (event.key === 'Escape') {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClick);
-    document.addEventListener('keydown', handleKey);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
-      document.removeEventListener('keydown', handleKey);
-    };
-  }, [menuOpen]);
-
-  const handleNavigate = (path) => {
-    if (path !== location.pathname) {
-      navigate(path);
-    }
-    setMenuOpen(false);
   };
 
   return (
     <header className="site-header">
-      <div className="page-menu" ref={menuRef}>
-        <button
-          type="button"
-          className={`page-menu-toggle ${menuOpen ? 'open' : ''}`}
-          aria-haspopup="true"
-          aria-expanded={menuOpen}
-          aria-controls="page-menu-options"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          <AnimatedIcon name="menu" />
-          <span>{currentPage.label}</span>
-          <AnimatedIcon name="chevron" />
-        </button>
-        <div className={`page-menu-dropdown ${menuOpen ? 'open' : ''}`} id="page-menu-options">
-          <ul role="menu">
-            {navItems.map((item) => (
-              <li key={item.to}>
-                <button
-                  type="button"
-                  className={location.pathname === item.to ? 'active' : ''}
-                  role="menuitem"
-                  onClick={() => handleNavigate(item.to)}
-                >
-                  <AnimatedIcon name="compass" className="menu-icon" />
-                  <span>{item.label}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="nav-switcher">
+        <label htmlFor="page-select" className="sr-only">
+          Navigate to page
+        </label>
+        <select id="page-select" value={location.pathname} onChange={handleNavigate}>
+          {navItems.map((item) => (
+            <option key={item.to} value={item.to}>
+              {item.label}
+            </option>
+          ))}
+        </select>
+        <AnimatedIcon name="compass" />
       </div>
       <Link to="/" className="logo" aria-label="Variable Objects home">
         <AnimatedIcon name="logo" />
@@ -104,7 +51,11 @@ const Header = ({ theme, setTheme, accessibility, setAccessibility }) => {
         >
           <AnimatedIcon name={theme === 'dark' ? 'sun' : 'moon'} />
         </button>
-        <AccessibilityBar accessibility={accessibility} setAccessibility={setAccessibility} />
+        <AccessibilityBar
+          accessibility={accessibility}
+          setAccessibility={setAccessibility}
+          inline
+        />
         <a className="cta button-primary" href="#contact" role="button">
           <span>Let&apos;s Talk</span>
         </a>
@@ -117,7 +68,7 @@ Header.propTypes = {
   theme: PropTypes.string.isRequired,
   setTheme: PropTypes.func.isRequired,
   accessibility: PropTypes.shape({
-    textScale: PropTypes.string,
+    largeText: PropTypes.bool,
     highContrast: PropTypes.bool,
     reduceMotion: PropTypes.bool,
   }).isRequired,

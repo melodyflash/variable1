@@ -14,7 +14,7 @@ function App() {
   const location = useLocation();
   const [theme, setTheme] = useState('dark');
   const [accessibility, setAccessibility] = useState({
-    textScale: 'base',
+    largeText: false,
     highContrast: false,
     reduceMotion: false,
   });
@@ -24,7 +24,7 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    document.body.dataset.textScale = accessibility.textScale;
+    document.body.dataset.largeText = accessibility.largeText;
     document.body.dataset.highContrast = accessibility.highContrast;
     document.body.dataset.reduceMotion = accessibility.reduceMotion;
   }, [accessibility]);
@@ -39,7 +39,6 @@ function App() {
       setTheme={setTheme}
       accessibility={accessibility}
       setAccessibility={setAccessibility}
-      currentPath={location.pathname}
     >
       <Routes>
         <Route path="/" element={<Home />} />

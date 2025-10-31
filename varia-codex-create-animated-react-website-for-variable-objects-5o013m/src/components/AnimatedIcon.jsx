@@ -5,22 +5,13 @@ const paths = {
     <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
       <defs>
         <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="var(--logo-stop-1)" />
-          <stop offset="100%" stopColor="var(--logo-stop-2)" />
+          <stop offset="0%" stopColor="#22d3ee" />
+          <stop offset="100%" stopColor="#a855f7" />
         </linearGradient>
       </defs>
-      <rect
-        x="4"
-        y="4"
-        width="56"
-        height="56"
-        rx="12"
-        fill="transparent"
-        stroke="url(#logo-gradient)"
-        strokeWidth="2.5"
-      />
+      <rect x="4" y="4" width="56" height="56" rx="12" fill="transparent" stroke="url(#logo-gradient)" strokeWidth="2.5" />
       <circle cx="32" cy="32" r="10" fill="url(#logo-gradient)" opacity="0.45" />
-      <circle cx="32" cy="32" r="5" fill="var(--logo-core)" />
+      <circle cx="32" cy="32" r="5" fill="#f8fafc" />
     </svg>
   ),
   sun: (
@@ -63,148 +54,6 @@ const paths = {
       <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
-  compass: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <polygon points="12 7 15.5 15.5 12 13 8.5 15.5" fill="currentColor" opacity="0.85" />
-    </svg>
-  ),
-  chevron: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="m7 9 5 6 5-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  menu: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M4 7h16M4 12h16M8 17h12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  ),
-  accessibility: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <circle cx="12" cy="5.5" r="2" fill="currentColor" />
-      <path
-        d="M4 9h16l-1 2.5-5 1V20l-3-.5v-7.99l-5-1L4 9Z"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
-  artifact: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <rect x="5" y="5" width="14" height="14" rx="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
-      <path d="M9 9h6v6H9z" fill="currentColor" opacity="0.35" />
-      <path d="M12 7v10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
-    </svg>
-  ),
-  beacon: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <circle cx="12" cy="12" r="2.5" fill="currentColor" />
-      <path d="M5.5 6.5a9 9 0 0 1 0 11m13-11a9 9 0 0 0 0 11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M8.5 9.5a5 5 0 0 1 0 5m7-5a5 5 0 0 0 0 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  ),
-  sensor: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <rect x="4" y="9" width="16" height="6" rx="2" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <circle cx="8" cy="12" r="1.5" fill="currentColor" />
-      <path d="M14 12h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M6 5h12M6 19h12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
-    </svg>
-  ),
-  engagement: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path
-        d="M12 20s-6-3.4-6-8a4 4 0 0 1 7-2.5A4 4 0 0 1 18 12c0 4.6-6 8-6 8Z"
-        fill="currentColor"
-      />
-      <circle cx="12" cy="6" r="2" fill="currentColor" opacity="0.4" />
-    </svg>
-  ),
-  loyalty: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M12 4 4 9l8 5 8-5-8-5Zm0 16v-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="12" cy="19" r="1.5" fill="currentColor" />
-    </svg>
-  ),
-  efficiency: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M7 4 5 6m12-2 2 2m-2 12 2 2M7 20l-2-2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
-    </svg>
-  ),
-  prototype: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M5 5h14v6H5z" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M7 9h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <rect x="7" y="13" width="10" height="6" rx="2" fill="currentColor" opacity="0.3" />
-    </svg>
-  ),
-  deploy: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M5 11h9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="m12 7 7 5-7 5V7Z" fill="currentColor" />
-      <path d="M5 17h5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.6" />
-    </svg>
-  ),
-  optimize: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <circle cx="12" cy="12" r="3" fill="currentColor" />
-      <path d="M4 12a8 8 0 0 1 8-8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M20 12a8 8 0 0 1-8 8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M4 12h16" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
-    </svg>
-  ),
-  ethics: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M6 5h12l-1 10a5 5 0 0 1-10 0L6 5Z" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M10 9h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <circle cx="12" cy="16" r="1.5" fill="currentColor" />
-    </svg>
-  ),
-  artistry: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M6 16c0 2.21 2.69 4 6 4s6-1.79 6-4-2.69-4-6-4-6-1.79-6-4 2.69-4 6-4" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <circle cx="9" cy="7" r="1.5" fill="currentColor" />
-      <path d="M15 13c1.3-.67 3-2.17 3-4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  ),
-  community: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <circle cx="7.5" cy="9" r="2" fill="currentColor" />
-      <circle cx="16.5" cy="9" r="2" fill="currentColor" />
-      <path d="M4 18a3.5 3.5 0 0 1 7 0m9 0a3.5 3.5 0 0 0-7 0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <circle cx="12" cy="15" r="2" fill="currentColor" opacity="0.35" />
-    </svg>
-  ),
-  coffee: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M6 8h11v5a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V8Z" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M17 9h1a2 2 0 0 1 0 4h-1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M9 5c0-.5.4-1 1-1s1 .5 1 1-.5 1-1 1 0 .5 0 1m3-2c0-.5.4-1 1-1s1 .5 1 1-.5 1-1 1 0 .5 0 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  ),
-  immersive: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <rect x="3" y="7" width="18" height="10" rx="3" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M7 12h2l1 2 2-4 1 2h2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  retail: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="M4 7h16l-1.2 9.5a3 3 0 0 1-3 2.5H8.2a3 3 0 0 1-3-2.5L4 7Z" stroke="currentColor" strokeWidth="1.4" fill="none" />
-      <path d="M9 7V5a3 3 0 0 1 6 0v2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M10 12h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  ),
-  travel: (
-    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-      <path d="m3 10 9-6 9 6-9 6-9-6Zm9 6v5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M8 21h8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  ),
   linkedin: (
     <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
       <path d="M4.98 3.5a2 2 0 1 0 .02 4 2 2 0 0 0-.02-4ZM4 8.75h2v11.5H4ZM9.5 8.75H11v1.6h.03c.21-.4.74-1.04 1.92-1.04 2.05 0 2.43 1.35 2.43 3.1v7.84h-2v-6.95c0-1.66-.03-3.79-2.31-3.79-2.31 0-2.66 1.8-2.66 3.66v7.08h-2V8.75Z" fill="currentColor" />
@@ -225,15 +74,141 @@ const paths = {
       />
     </svg>
   ),
+  compass: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" fill="none" />
+      <path d="M14.8 9.2 12 14.8 9.2 12Z" fill="currentColor" />
+    </svg>
+  ),
+  artifact: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <rect x="5" y="4" width="14" height="16" rx="2.4" stroke="currentColor" strokeWidth="1.5" fill="none" />
+      <path d="M8 8h8M8 12h6M8 16h5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  ),
+  lighting: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M13 3 6 13h5l-1 8 8-12h-5Z" fill="currentColor" />
+    </svg>
+  ),
+  sensor: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+      <path
+        d="M5.5 18.5A8.5 8.5 0 0 1 5.5 5.5m13 13a8.5 8.5 0 0 0 0-12.99M8.5 15.5a4.5 4.5 0 0 1 0-6.36m7 6.36a4.5 4.5 0 0 0 0-6.36"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  ),
+  analytics: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M5 20V10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M12 20V4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M19 20v-8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  loyalty: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path
+        d="M12 20s-7-4.35-7-9.23C5 7.38 7.52 5 10.35 5c1.38 0 2.65.63 3.65 1.68A5.08 5.08 0 0 1 17.65 5C20.48 5 23 7.38 23 10.77 23 15.65 16 20 16 20"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  energy: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path
+        d="M12 2 7 12h5l-1 10 6-11h-5Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        fill="none"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+  prototype: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <path d="m9 9 3 3 3-3m-6 6h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  deploy: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M4 16h16M4 12h10M4 8h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M15 12v8l5-4-5-4Z" fill="currentColor" />
+    </svg>
+  ),
+  optimize: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="m4 14 6.5-7L15 11l5-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="9" cy="15" r="1.5" fill="currentColor" />
+      <circle cx="15" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  ),
+  story: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M5 5h9l5 4v10H5V5Z" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <path d="M14 5v4h5" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+    </svg>
+  ),
+  immersion: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <circle cx="12" cy="8" r="3" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <path d="M4 19c1.5-3 4.5-5 8-5s6.5 2 8 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
+  vision: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+    </svg>
+  ),
+  airport: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M3 19h18" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="m4 14 5-2 3-7 3 7 5 2-5 1v3l-3-1-3 1v-3Z" fill="currentColor" />
+    </svg>
+  ),
+  ethics: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M12 3 4 7v5c0 5 3.5 9.74 8 11 4.5-1.26 8-6 8-11V7l-8-4Z" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <path d="M9 12h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M9 15h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  ),
+  delight: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path
+        d="M12 21c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8Zm0-6a4 4 0 0 1-3.8-2.67M9 9h.01M15 9h.01"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        fill="none"
+        strokeLinecap="round"
+      />
+    </svg>
+  ),
+  community: (
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <circle cx="7" cy="9" r="3" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <circle cx="17" cy="9" r="3" stroke="currentColor" strokeWidth="1.4" fill="none" />
+      <path d="M3 20a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M11 20a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
 };
 
-const AnimatedIcon = ({ name, className = '' }) => {
-  return <span className={`animated-icon ${className}`.trim()}>{paths[name]}</span>;
+const AnimatedIcon = ({ name }) => {
+  return <span className="animated-icon">{paths[name]}</span>;
 };
 
 AnimatedIcon.propTypes = {
   name: PropTypes.oneOf(Object.keys(paths)).isRequired,
-  className: PropTypes.string,
 };
 
 export default AnimatedIcon;

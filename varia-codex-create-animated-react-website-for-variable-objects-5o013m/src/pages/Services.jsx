@@ -14,7 +14,7 @@ const services = [
   {
     title: 'Responsive Signage, Lights & Queue Entertainment',
     stat: 'Repeat visits up 30% with interactive media — Forrester',
-    icon: 'beacon',
+    icon: 'lighting',
     points: [
       'Projection-mapped murals and LED sculptures that shift with crowd energy',
       'Dynamic wait-time storytelling that reduces perceived queue length by 25%',
@@ -36,7 +36,7 @@ const services = [
 const Services = () => {
   return (
     <div className="page services-page">
-      <section className="section-heading animate-on-scroll">
+      <section className="section-heading">
         <p className="eyebrow">Services</p>
         <h1>IoT systems designed like installations, tuned like intelligence hubs</h1>
         <p>
@@ -49,7 +49,7 @@ const Services = () => {
           <ServiceCard key={service.title} {...service} />
         ))}
       </div>
-      <section className="service-highlight animate-on-scroll">
+      <section className="service-highlight">
         <h2>Why move now?</h2>
         <ul>
           <li>

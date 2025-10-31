@@ -7,37 +7,37 @@ const metrics = [
   {
     value: '48% uplift',
     label: 'Engagement',
+    icon: 'analytics',
     description: 'Gartner reports immersive IoT experiences increase dwell time and conversions by nearly half.',
-    icon: 'engagement',
   },
   {
     value: '72% retention',
     label: 'Repeat visits',
-    description: 'Bain found loyalty climbs when responsive environments celebrate returning guests with personalized moments.',
     icon: 'loyalty',
+    description: 'Bain found loyalty climbs when responsive environments celebrate returning guests with personalized moments.',
   },
   {
     value: '41% leaner',
     label: 'Operational spend',
+    icon: 'energy',
     description: 'McKinsey notes smart automation trims energy and staffing costs while unlocking new creative bandwidth.',
-    icon: 'efficiency',
   },
 ];
 
 const processSteps = [
   {
     title: 'Prototyping',
-    description: 'Rapid concepting with local artists and makers to visualize your connected experience.',
+    copy: 'Rapid concepting with local artists and makers to visualize your connected experience.',
     icon: 'prototype',
   },
   {
     title: 'Deployment',
-    description: 'Installation crews integrate devices, signage, and analytics without disrupting daily flow.',
+    copy: 'Installation crews integrate devices, signage, and analytics without disrupting daily flow.',
     icon: 'deploy',
   },
   {
     title: 'Optimization',
-    description: 'Continuous tuning with dashboards and human-centered adjustments that keep the vibe dialed in.',
+    copy: 'Continuous tuning with dashboards and human-centered adjustments that keep the vibe dialed in.',
     icon: 'optimize',
   },
 ];
@@ -45,7 +45,7 @@ const processSteps = [
 const Home = () => {
   return (
     <div className="page home-page">
-      <section className="hero animate-on-scroll">
+      <section className="hero">
         <div className="hero-content">
           <p className="eyebrow">Ocean Beach-crafted, coast-to-coast impact</p>
           <h1>
@@ -71,7 +71,7 @@ const Home = () => {
           <div className="grid" />
         </div>
       </section>
-      <section className="metrics-section animate-on-scroll">
+      <section className="metrics-section">
         <div className="section-heading">
           <p className="eyebrow">Performance as art</p>
           <h2>IoT intelligence that hits the metrics and the feels</h2>
@@ -86,7 +86,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <section className="process-section animate-on-scroll">
+      <section className="process-section">
         <div className="section-heading">
           <p className="eyebrow">Imagine · Engineer · Optimize</p>
           <h2>Responsive environments tuned to your story</h2>
@@ -97,14 +97,12 @@ const Home = () => {
         </div>
         <div className="process-grid">
           {processSteps.map((step) => (
-            <div key={step.title} className="process-card animate-on-scroll">
-              <div className="card-header">
-                <span className="card-icon" aria-hidden="true">
-                  <AnimatedIcon name={step.icon} />
-                </span>
-                <h3>{step.title}</h3>
-              </div>
-              <p>{step.description}</p>
+            <div key={step.title} className="process-card">
+              <span className="process-icon" aria-hidden="true">
+                <AnimatedIcon name={step.icon} />
+              </span>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
             </div>
           ))}
         </div>

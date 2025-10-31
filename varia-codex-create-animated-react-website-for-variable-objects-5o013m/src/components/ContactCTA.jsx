@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import AnimatedIcon from './AnimatedIcon.jsx';
 
 const ContactCTA = () => {
@@ -26,20 +26,8 @@ const ContactCTA = () => {
     setFormState({ name: '', email: '', company: '', message: '' });
   };
 
-  useEffect(() => {
-    if (!status) {
-      return undefined;
-    }
-
-    const timeout = setTimeout(() => {
-      setStatus(null);
-    }, status.type === 'error' ? 5000 : 7000);
-
-    return () => clearTimeout(timeout);
-  }, [status]);
-
   return (
-    <section id="contact" className="contact-section animate-on-scroll">
+    <section id="contact" className="contact-section">
       <div className="section-heading">
         <p className="eyebrow">Let&apos;s Create Beautiful Performance</p>
         <h2>Bring artful intelligence to your business</h2>
