@@ -14,29 +14,27 @@ const Header = ({ theme, setTheme, accessibility, setAccessibility }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleSelect = (event) => {
+  const handleNavigate = (event) => {
     const { value } = event.target;
-    if (value !== location.pathname) {
+    if (value && value !== location.pathname) {
       navigate(value);
     }
   };
 
   return (
     <header className="site-header">
-      <div className="nav-select">
-        <label htmlFor="page-select" className="visually-hidden">
-          Select page
+      <div className="nav-switcher">
+        <label htmlFor="page-select" className="sr-only">
+          Navigate to page
         </label>
-        <div className="select-wrapper">
-          <AnimatedIcon name="pages" />
-          <select id="page-select" value={location.pathname} onChange={handleSelect}>
-            {navItems.map((item) => (
-              <option key={item.to} value={item.to}>
-                {item.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        <select id="page-select" value={location.pathname} onChange={handleNavigate}>
+          {navItems.map((item) => (
+            <option key={item.to} value={item.to}>
+              {item.label}
+            </option>
+          ))}
+        </select>
+        <AnimatedIcon name="compass" />
       </div>
       <Link to="/" className="logo" aria-label="Variable Objects home">
         <AnimatedIcon name="logo" />
@@ -56,7 +54,7 @@ const Header = ({ theme, setTheme, accessibility, setAccessibility }) => {
         <AccessibilityBar
           accessibility={accessibility}
           setAccessibility={setAccessibility}
-          className="accessibility-inline"
+          inline
         />
         <a className="cta button-primary" href="#contact" role="button">
           <span>Let&apos;s Talk</span>

@@ -5,12 +5,10 @@ const ServiceCard = ({ title, points, stat, icon }) => {
   return (
     <article className="service-card">
       <div className="service-header">
-        <div className="service-title">
-          <span className="card-icon" aria-hidden="true">
-            <AnimatedIcon name={icon} />
-          </span>
-          <h3>{title}</h3>
-        </div>
+        <span className="service-icon" aria-hidden="true">
+          <AnimatedIcon name={icon} />
+        </span>
+        <h3>{title}</h3>
       </div>
       <ul>
         {points.map((point) => (

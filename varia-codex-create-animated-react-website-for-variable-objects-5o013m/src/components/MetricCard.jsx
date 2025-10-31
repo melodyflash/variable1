@@ -4,9 +4,9 @@ import AnimatedIcon from './AnimatedIcon.jsx';
 const MetricCard = ({ label, value, description, icon }) => {
   return (
     <div className="metric-card">
-      <div className="metric-icon" aria-hidden="true">
+      <span className="metric-icon" aria-hidden="true">
         <AnimatedIcon name={icon} />
-      </div>
+      </span>
       <div className="metric-value">{value}</div>
       <p className="metric-label">{label}</p>
       <p className="metric-description">{description}</p>
