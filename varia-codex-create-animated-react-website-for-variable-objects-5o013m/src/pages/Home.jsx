@@ -7,37 +7,37 @@ const metrics = [
   {
     value: '48% uplift',
     label: 'Engagement',
+    icon: 'analytics',
     description: 'Gartner reports immersive IoT experiences increase dwell time and conversions by nearly half.',
-    icon: 'engagement',
   },
   {
     value: '72% retention',
     label: 'Repeat visits',
-    description: 'Bain found loyalty climbs when responsive environments celebrate returning guests with personalized moments.',
     icon: 'loyalty',
+    description: 'Bain found loyalty climbs when responsive environments celebrate returning guests with personalized moments.',
   },
   {
     value: '41% leaner',
     label: 'Operational spend',
+    icon: 'energy',
     description: 'McKinsey notes smart automation trims energy and staffing costs while unlocking new creative bandwidth.',
-    icon: 'efficiency',
   },
 ];
 
 const processSteps = [
   {
     title: 'Prototyping',
-    description: 'Rapid concepting with local artists and makers to visualize your connected experience.',
+    copy: 'Rapid concepting with local artists and makers to visualize your connected experience.',
     icon: 'prototype',
   },
   {
     title: 'Deployment',
-    description: 'Installation crews integrate devices, signage, and analytics without disrupting daily flow.',
+    copy: 'Installation crews integrate devices, signage, and analytics without disrupting daily flow.',
     icon: 'deploy',
   },
   {
     title: 'Optimization',
-    description: 'Continuous tuning with dashboards and human-centered adjustments that keep the vibe dialed in.',
+    copy: 'Continuous tuning with dashboards and human-centered adjustments that keep the vibe dialed in.',
     icon: 'optimize',
   },
 ];
@@ -96,18 +96,16 @@ const Home = () => {
           </p>
         </div>
         <div className="process-grid">
-        {processSteps.map((step) => (
-          <div key={step.title} className="process-card">
-            <div className="card-header">
-              <span className="card-icon" aria-hidden="true">
+          {processSteps.map((step) => (
+            <div key={step.title} className="process-card">
+              <span className="process-icon" aria-hidden="true">
                 <AnimatedIcon name={step.icon} />
               </span>
               <h3>{step.title}</h3>
+              <p>{step.copy}</p>
             </div>
-            <p>{step.description}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </section>
       <ContactCTA />
     </div>

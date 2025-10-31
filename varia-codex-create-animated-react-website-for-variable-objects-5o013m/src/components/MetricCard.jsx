@@ -4,11 +4,9 @@ import AnimatedIcon from './AnimatedIcon.jsx';
 const MetricCard = ({ label, value, description, icon }) => {
   return (
     <div className="metric-card">
-      {icon && (
-        <span className="card-icon" aria-hidden="true">
-          <AnimatedIcon name={icon} />
-        </span>
-      )}
+      <span className="metric-icon" aria-hidden="true">
+        <AnimatedIcon name={icon} />
+      </span>
       <div className="metric-value">{value}</div>
       <p className="metric-label">{label}</p>
       <p className="metric-description">{description}</p>
@@ -20,7 +18,7 @@ MetricCard.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  icon: PropTypes.string,
+  icon: PropTypes.string.isRequired,
 };
 
 export default MetricCard;

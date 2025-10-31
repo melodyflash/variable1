@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import AnimatedIcon from './AnimatedIcon.jsx';
 
-const AccessibilityBar = ({ accessibility, setAccessibility, variant = 'floating' }) => {
+const AccessibilityBar = ({ accessibility, setAccessibility, inline = false }) => {
   const toggleOption = (key) => {
     setAccessibility((prev) => ({
       ...prev,
@@ -10,9 +10,10 @@ const AccessibilityBar = ({ accessibility, setAccessibility, variant = 'floating
   };
 
   return (
-    <aside
-      className={`accessibility-bar accessibility-bar-${variant}`}
+    <div
+      className={`accessibility-bar ${inline ? 'accessibility-bar--inline' : ''}`}
       aria-label="Accessibility preferences"
+      role="group"
     >
       <button
         type="button"
@@ -38,7 +39,7 @@ const AccessibilityBar = ({ accessibility, setAccessibility, variant = 'floating
         <AnimatedIcon name="motion" />
         <span>Reduce Motion</span>
       </button>
-    </aside>
+    </div>
   );
 };
 
@@ -49,7 +50,7 @@ AccessibilityBar.propTypes = {
     reduceMotion: PropTypes.bool,
   }).isRequired,
   setAccessibility: PropTypes.func.isRequired,
-  variant: PropTypes.oneOf(['floating', 'inline']),
+  inline: PropTypes.bool,
 };
 
 export default AccessibilityBar;

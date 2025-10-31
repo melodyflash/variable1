@@ -14,7 +14,7 @@ const services = [
   {
     title: 'Responsive Signage, Lights & Queue Entertainment',
     stat: 'Repeat visits up 30% with interactive media — Forrester',
-    icon: 'beacon',
+    icon: 'lighting',
     points: [
       'Projection-mapped murals and LED sculptures that shift with crowd energy',
       'Dynamic wait-time storytelling that reduces perceived queue length by 25%',

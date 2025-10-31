@@ -3,35 +3,35 @@ import AnimatedIcon from '../components/AnimatedIcon.jsx';
 const studies = [
   {
     title: 'Starbucks Reserve Roasteries',
+    icon: 'story',
     summary:
       'Interactive tasting bars with NFC-enabled coasters let guests explore sourcing stories, boosting premium merchandise sales by double digits.',
     alignment:
       'We design scannable artifacts that mirror this curiosity-driven storytelling while integrating your POS and loyalty stack.',
-    icon: 'coffee',
   },
   {
     title: 'Meow Wolf Immersive Exhibits',
+    icon: 'immersion',
     summary:
       'Responsive lighting, audio, and projection loops adapt to visitor presence, keeping dwell times high and social buzz constant.',
     alignment:
       'Our creative technologists craft similar adaptive atmospheres for retail, hospitality, and cultural spaces with measurable KPIs.',
-    icon: 'immersive',
   },
   {
     title: 'Amazon Fresh & Go Stores',
+    icon: 'vision',
     summary:
       'Computer vision, sensors, and automated checkouts shrink friction and provide a steady stream of inventory intelligence.',
     alignment:
       'We deploy sensor frameworks that deliver real-time notifications and analytics to empower your teams with the same clarity.',
-    icon: 'retail',
   },
   {
     title: 'San Diego Airport Smart Curbside',
+    icon: 'airport',
     summary:
       'IoT-enabled signage and queue management tools cut wait times and improved traveler satisfaction scores 24% in pilot runs.',
     alignment:
       'Variable Objects brings responsive signage and analytics to local businesses craving that same smooth, reassuring flow.',
-    icon: 'travel',
   },
 ];
 
@@ -49,12 +49,10 @@ const CaseStudies = () => {
       <div className="case-grid">
         {studies.map((study) => (
           <article key={study.title} className="case-card">
-            <div className="card-header">
-              <span className="card-icon" aria-hidden="true">
-                <AnimatedIcon name={study.icon} />
-              </span>
-              <h2>{study.title}</h2>
-            </div>
+            <span className="case-icon" aria-hidden="true">
+              <AnimatedIcon name={study.icon} />
+            </span>
+            <h2>{study.title}</h2>
             <p>{study.summary}</p>
             <p className="case-alignment">{study.alignment}</p>
           </article>
